@@ -12,8 +12,11 @@ public class Titles {
     private String artist;
     private String album;
     private LocalDate release;
+    private int playedCount;
+	private int chartPosition;
 
-    public Titles(String titleId, String name, int duration, String artist, String album, LocalDate release) {
+    public Titles(String titleId, String name, int duration, String artist, String album, 
+    		LocalDate release, int playedCount, int chartPosition) {
         super();
         this.titleId = titleId;
         this.name = name;
@@ -21,11 +24,14 @@ public class Titles {
         this.artist = artist;
         this.album = album;
         this.release = release;
+        this.playedCount = playedCount;
+        this.chartPosition = chartPosition;
     }
 
     @Override
     public String toString() {
-        String t = titleId + "\t" + name + "\t" + duration + "\t" + artist + "\t" + album + "\t" + release;
+        String t = titleId + "\t" + name + "\t" + duration + "\t" + artist + "\t" + album + "\t" + 
+        		release + "\t" + playedCount + "\t" + chartPosition;
         return t;
     }
 
@@ -76,4 +82,20 @@ public class Titles {
     public void setRelease(LocalDate release) {
         this.release = release;
     }
+    
+    public int getPlayedCount() {
+		return playedCount;
+	}
+
+	public void setPlayedCount(int playedCount) {
+		this.playedCount = playedCount;
+	}
+
+	public int getChartPosition() {
+		return chartPosition;
+	}
+
+	public void setChartPosition(int chartPosition) {
+		this.chartPosition = chartPosition;
+	}
 }

@@ -20,7 +20,7 @@ public class Haupt {
     }
 
     /**
-     * Generates random Test Data
+     * Generates random Test Data in a linkedList
      * @param count Count how many data sets should be created
      * @return
      */
@@ -55,9 +55,12 @@ public class Haupt {
             }
             
             LocalDate release = LocalDate.of(randBetween(1950,2014),randBetween(1,12),randBetween(1,28));
+            
+            int playedCount = randBetween(0, 30);
+            
+            int chartPosition = randBetween(1, 100);
 
-
-            data.add(new Titles(titleId,name,duration,artist,album,release));
+            data.add(new Titles(titleId,name,duration,artist,album,release, playedCount, chartPosition));
         }
 
         return data;
@@ -68,7 +71,7 @@ public class Haupt {
         LinkedList<Titles> randData = generate(dataCount);
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(filePath));
-            out.write("TitleId,Name,Duration,Artist,Album,Release" + "\n");
+            out.write("TitleId,Name,Duration,Artist,Album,Release,Played,Chart Position" + "\n");
             for (Titles t: randData) {
                 out.write(t.toString() + "\n");
             }
