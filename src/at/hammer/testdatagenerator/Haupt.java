@@ -71,7 +71,7 @@ public class Haupt {
         LinkedList<Titles> randData = generate(dataCount);
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(filePath));
-            out.write("TitleId,Name,Duration,Artist,Album,Release,Played,Chart Position" + "\n");
+//            out.write("TitleId,Name,Duration,Artist,Album,Release,Played,Chart Position" + "\n");
             for (Titles t: randData) {
                 out.write(t.toString() + "\n");
             }
